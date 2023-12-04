@@ -6,7 +6,7 @@ De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
 <!-- Geef je project een titel en schrijf in één zin wat het is -->
 
 ## User Story
-<!-- Schrijf de user story waar je aan hebt gewerkt  -->
+Maak een overzichtpagina die zich prioriseert op het vraag en aanbod voor de initiatieven en de services van of voor buren
 
 ## Beschrijving
 <!-- In de Beschrijving staat hoe je project er uit ziet, hoe het werkt en wat je er mee kan. -->
