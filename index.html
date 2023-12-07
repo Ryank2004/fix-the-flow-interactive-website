@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    
+    <title>BUURT</title>
+</head>
+<body>
+
+    <nav>
+        <div class="spacer"></div>
+            <h1>BUURT<span>CAMPUS</span></h1>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Initiatieven</a></li>
+            <li><a href="#">Over Ons</a></li>
+        </ul>
+        <div class="hamburger-menu">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+    
+    <main>
+        <section class="grid-container">
+            <!-- <div class="image-container">
+                <img src="fotos/Screenshot 2023-11-27 at 21.21.17.png" alt="Mobile Image">
+            </div>
+        <div class="image-containerGroot">
+            <img src="fotos/westmapsgroot.png" alt="Desktop image">
+        </div> -->
+            <div class="text-container">
+                <blockquote>
+                    <h2>Buren steunen buren</h2> <br>
+                    <h5>Doe je ook mee?</h5>
+                </blockquote>
+            </div>
+        </section>
+        
+        <!-- aangeboden en gezocht knoppen. id voor javascript.-->
+        <section class="marketplace">
+            <button id="offered" class="offered active">
+                <h3 tabindex="0">Aangeboden</h3>
+            </button>
+            <button id="wanted" class="wanted">
+                <h3 tabindex="0">Gezocht</h3>
+            </button>        
+        </section>
+
+        <!-- overzicht van de kaarten wanneer "actief" actief is -->
+        <section id="card-list-offered" class="card-list active">
+            <div class="card">
+                <img src="image1.jpg" alt="Image 1">
+                <h3>Aangeboden</h3>
+            </div>
+            <div class="card">
+                <img src="image2.jpg" alt="Image 2">
+                <h3>Aangeboden 2</h3>
+            </div>
+         </section>
+        
+         <!-- overzicht van de kaarten wanneer "gezocht" actief is -->
+        <section id="card-list-wanted" class="card-list">
+            <div class="card">
+                <img src="image1.jpg" alt="Image 1">
+                <h3>Gezocht</h3>
+            </div>
+            <div class="card">
+                <img src="image2.jpg" alt="Image 2">
+                <h3>Gezocht 2</h3>
+            </div>
+         </section>
+        
+    </main>
+        <script src="script.js"></script>     
+    </body>
+    </html>
