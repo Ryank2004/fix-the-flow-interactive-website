@@ -1,4 +1,5 @@
-const offeredBtn = document.getElementById('offered'); /* gebruik getElementById als je class wilt selecterem, alleen elementen werken met queryselector*/
+/* gebruik getElementById als je class wilt selecterem, alleen elementen werken met queryselector*/
+const offeredBtn = document.getElementById('offered');
 const wantedBtn = document.getElementById('wanted');  /*niet vergeten een id bij je class te zetten in html*/
 const offeredList = document.getElementById('card-list-offered');
 const wantedList = document.getElementById('card-list-wanted');
