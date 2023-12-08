@@ -29,6 +29,8 @@
       align-items: center;
       padding: 1em 2em;
       box-shadow: 0 0 0.75rem 0.15rem rgba(26, 42, 52, 0.5);
+      z-index: 10px;
+      position: relative;
   
     & h1 {
       display: flex;
@@ -58,6 +60,10 @@
   
   .grid-container {
     display: flex;
+    background-image: url('/fotos/Screenshot\ 2023-11-27\ at\ 21.21.17.png'); /* Set the background image */
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the image in the container */
+    background-repeat: no-repeat; /* Do not repeat the image */
     /* grid-template-columns: 100%; Full width */
 
   & .image-containerGroot {
@@ -77,21 +83,25 @@
       border-radius: 1.3em;
     }
   }
-  
   .text-container {
-      display: flex;
-      font-family: var(--main-font);
-      max-width: 55ch;
-      padding: 2em;
-      
-  
+        display: flex;
+        font-family: var(--main-font);
+        padding: 1.5em;
+        text-align: center;
+        margin: auto;
+        letter-spacing: 0.1em;
+        text-shadow: 2.5px 0px 4px #212121a3;
+        
     & h2 {
-      color: var(--third-color);
-      font-size: 4em;
+      color: var(--primary-color);
+      font-size: 3em;
       line-height: 1.2em;
+      justify-content: center;
+      align-items: center;
     }
     & h5 {
-      font-size: 3.5em;
+      font-size: 2.5em;
+      color: var(--third-color);
     }
   }
   
@@ -110,10 +120,11 @@
   .offered,
   .wanted {
     display: flex;
+    z-index: 10px;
+    position: relative;
     justify-content: space-evenly;
     padding: 0.6em 0 1em 0;
     width: 50vw;
-    box-shadow: 0 -0.2rem 0.4rem -0.1rem rgba(140, 161, 174, 0.5); 
   }
   
   .offered:hover,
