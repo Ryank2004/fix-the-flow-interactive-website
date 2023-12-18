@@ -21,12 +21,15 @@ wantedBtn.addEventListener('click', function() {
     wantedList.classList.add('active')
 })
 
-const iconPijlBtn = document.querySelector('.material-symbols-outlined')
-const dropdownInfo = document.querySelector('.information-container')
+// const iconPijlBtn = document.querySelector('.material-symbols-outlined')
+const dropdownBtn = document.querySelector('.information-text-container')
+// const dropdownInfo = document.querySelector('.information-text-container p')
+// console.log(dropdownInfo)
 
-iconPijlBtn.addEventListener('click', menuOpen)
+dropdownBtn.addEventListener('click', menuOpen)
 
 function menuOpen() {
-    dropdownInfo.classList.toggle('information-container-show')
-    iconPijlBtn.classList.toggle('rotationIcon')
+    dropdownBtn.classList.toggle('information-text-container-show')
+    // iconPijlBtn.classList.toggle('rotationIcon')
+    // dropdownInfo.classList.toggle('information-fold-out')
 }
