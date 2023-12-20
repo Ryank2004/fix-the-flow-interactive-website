@@ -1,0 +1,244 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #46aa64;
+    --primary-color-lighter: #3dd36a7a;
+    --secondary-color: #0a3250;
+    --tertiaire-color: #ffffff;
+    --main-font: "AvantGardeGothicMedium", arial, Helvetica, sans-serif;
+    --box-shadow1: 0 0 0.6rem .15rem rgba(95, 95, 95, 0.237);
+    --initiative-card-padding: 3em 0 3em 1em;
+  }
+
+body {
+    font-family: var(--main-font);
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--secondary-color);
+    align-items: center;
+
+    & h1 {
+        color: var(--tertiaire-color);
+        padding: 0 1em;
+        text-transform: uppercase;
+    }
+
+    span {
+        color: var(--primary-color);
+    }
+
+    ul {
+        display: flex;
+        list-style: none;
+        gap: 1em;
+        padding: 0 1em;
+    }
+
+    a {
+        all: unset;
+        color: var(--tertiaire-color);
+    }
+
+    a:hover {
+        color: var(--primary-color);
+        cursor: pointer;
+    }
+
+    a::after {
+        content: "";
+        width: 0%;
+        height: 2px;
+        background: var(--primary-color);
+        border-radius: 5em;
+        display: block;
+        margin: auto;
+        transition: 200ms;
+    }
+
+    a:hover::after {
+        width: 100%;
+    }
+
+    button {
+        display: none;
+        border: none;
+        background-color: transparent;
+    }
+
+    button img {
+        width: 3em;
+    }
+
+    .wegwijzer {
+        color: rgb(172, 172, 172);
+        padding-left: 1em;
+    }
+}
+
+/* begin homepagina */
+
+.front-content {
+    display: flex;
+    padding: 1.5em;
+
+    & iframe {
+        border-radius: 1em;
+    }
+
+    h2 {
+        font-size: 5em;
+    }
+
+    span {
+        color: var(--primary-color);
+    }
+}
+
+@media (max-width: 630px) {
+    iframe {
+        display: none;
+    }
+
+    .front-content h2 {
+        padding: 0;
+        margin: 0;
+        font-size: 3.5em;
+    }
+}
+
+/* einde homepagina */
+
+/* begin initiatieven.html */
+
+.help-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--main-font);
+        background-color: var(--primary-color-lighter);
+        border-radius: .6em;
+        border: none;
+        box-shadow: var(--box-shadow1);
+        line-height: 1.6;
+        margin: 1em auto;
+
+        & :hover {
+            cursor: pointer;
+        }
+
+        span {
+            font-weight: 600;
+        }
+}
+
+/* Stappenplan styling */
+
+::backdrop {
+    backdrop-filter: blur(0.5em);
+}
+
+dialog {
+    height: 20em;
+    width: 20em;
+    border: none;
+    border-radius: 1em;
+    
+    & h2 {
+        position: absolute;
+        top: 0;
+        padding: 0;
+    }
+
+    button.next-step {
+        position: absolute;
+        bottom: 1em;
+        right: 1em;
+        background-color: black;
+        color: var(--tertiaire-color);
+        border: none;
+        padding: 0.5em 1em;
+        border-radius: 1em;
+    }
+
+    button.next-step:hover {
+        cursor: pointer;
+    }
+
+    p {
+        position: absolute;
+        top: 5em;
+        padding: 0;
+        color: rgb(65, 65, 65);
+    }
+
+    button.close-button {
+        border: none;
+        background: transparent;
+        scale: 2;
+        position: absolute;
+        right: 1em;
+    }
+
+    button.close-button {
+        cursor: pointer;
+    }
+}
+
+/* Einde stappenplan styling */
+
+/* Initiatieven overzicht */
+
+.initiative-overview {
+    margin: 0 auto;
+    width: 90%;
+
+    & ul {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: 2em;
+    }
+
+    li {
+        background-color: rgb(217, 235, 250);
+        padding: 2em;
+        border-radius: 0.5em;
+    }
+}
+
+/* Einde initiatieven overzicht */
+
+@media (max-width: 630px) {
+    .hamburger-menu {
+        display: flex;
+    }
+
+    header ul {
+        display: none;
+    }
+}
+
+@media (min-width: 1200px) {
+    .help-button {
+        width: 30em;
+    }
+
+    dialog {
+        height: 30em;
+        width: 30em;
+
+    & button {
+        scale: 1.1;
+    }
+    }
+}
+
+/* einde initiatieven.html */
