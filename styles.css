@@ -204,10 +204,6 @@ button {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.3);
 }
 
-@media screen and (min-width: 630px) {
-  /* Verberg het hamburgermenu op tablet/desktop */
-}
-
 .grid-container .image-container {
   display: none;
 }
@@ -225,6 +221,104 @@ button {
   width: 100%;
   height: auto;
   border-radius: 1.3em;
+}
+
+footer {
+  & {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    margin-top: 2em;
+    padding: 60px 10%;
+    font-family: var(--main-font);
+  }
+
+  & ul {
+    list-style: none;
+  }
+
+  & ul li:not(:last-child) {
+    margin-bottom: 8px;
+  }
+
+  & ul li a {
+    display: block;
+    font-size: 19px;
+    text-transform: capitalize;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: 0.2s;
+  }
+
+  & li a:hover {
+    color: var(--third-color);
+    padding-left: 2px;
+  }
+}
+
+.footer-col {
+  & {
+    width: 100%; /* Voor responsive maken: bij 740px 50% en bij 555px 100% doen */
+  }
+
+  & h4 {
+    position: relative;
+    margin-bottom: 30px;
+    font-weight: 400;
+    font-size: 22px;
+    text-transform: capitalize;
+  }
+  /* voor streepje onder h4 kopje.(Streepje vedwijnt, als beeld kleiner is dan 740px)*/
+  & h4::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    background-color: var(--third-color);
+    height: 2px;
+    width: 40px;
+  }
+}
+
+.links a {
+  display: inline-block;
+  height: 44px;
+  width: 44px;
+  color: white;
+  background-color: var(--third-color);
+  margin: 0px 8px 8px 0px;
+  text-align: center;
+  line-height: 44px;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+/*einde footer */
+
+/* Media qeury footer */
+
+@media (min-width: 555px) {
+  .footer-col {
+    width: 50%;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+}
+
+@media (min-width: 880px) {
+  .footer-col {
+    width: 25%;
+  }
+}
+
+@media (min-width: 300px) {
+  h4::before {
+    display: none;
+  }
+  .footer-col {
+    margin-bottom: 30px;
+  }
 }
 
 /* .grid-container {
@@ -268,7 +362,6 @@ button {
   .nav-item {
     margin: 16px 0;
   }
-
   .nav-menu.active {
     left: 0;
   }

@@ -31,4 +31,5 @@ hamburger.addEventListener("click", () => {
   navMenu.classList.toggle("active");
 });
 
+// Einde Hamburger menu 
 
