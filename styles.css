@@ -1,25 +1,23 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  --primary-color: #ffffff;
-  --secondary-color: #0a3250;
-  --third-color: #46aa64;
-  --text-backgroundColor: #3dd36a7a;
-  --main-font: "AvantGardeGothicMedium";
-}
-
-@font-face {
-  font-family: "AvantGardeGothicMedium";
-  src: url(./Fonts/ITC\ Avant\ Garde\ Gothic\ Medium.otf);
-}
-/* Nav */
-
-nav {
-  & {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --primary-color: #ffffff;
+    --secondary-color: #0a3250;
+    --third-color: #46aa64;
+    --text-backgroundColor: #3dd36a7a;
+    --main-font: "AvantGardeGothicMedium";
+  }
+  
+  @font-face {
+    font-family: "AvantGardeGothicMedium";
+    src: url(./Fonts/ITC\ Avant\ Garde\ Gothic\ Medium.otf);
+  }
+  
+  nav { 
     font-family: var(--main-font);
     background-color: var(--secondary-color);
     color: var(--primary-color);
@@ -28,325 +26,61 @@ nav {
     align-items: center;
     padding: 1em 2em;
     box-shadow: 0 0 0.75rem 0.15rem rgba(26, 42, 52, 0.5);
+  
+    & h1 {
+      display: flex;
+    }
+  
+    & span {
+      color: var(--third-color);
+    }
+    
+    & ul {
+      display: none;
+      list-style: none;
+    }
+    & ul li a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-size: 1rem;
+    }
+  
+    & ul li a:hover {
+      color: var(--third-color); /* Change color on hover */
+    } 
+
+    & ul li a::after {
+        content: "";
+        width: 0%;
+        height: 2px;
+        background: #2aad51;
+        display: block;
+        margin: auto;
+        transition: 0.5s;
+    }
+    & ul li a:hover::after {
+      width: 100%;
+    }
+    
+    & .hamburger {
+      display: block;
+      cursor: pointer;
+      padding-right: .2em;
+
+      & .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        -webkit-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+        background-color: white;
+      }
+    }
   }
-
-  & h1 {
-    display: flex;
-  }
-
-  & span {
-    color: var(--third-color);
-  }
-
-  & ul {
-    display: none;
-    list-style: none;
-  }
-  & a {
-    color: white;
-    text-decoration: none;
-  }
-}
-
-.nav-menu {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 60px;
-}
-
-.nav-link {
-  transition: 0.3s ease-out;
-}
-
-.hamburger {
-  display: none;
-  cursor: pointer;
-}
-
-.bar {
-  display: block;
-  width: 25px;
-  height: 3px;
-  margin: 5px auto;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  background-color: white;
-}
-/* Responsive NAV (nog nog met max-width, moet nog veranderen */
-
-.grid-container {
-  display: flex;
-  flex-direction: column;
-  font-family: var(--main-font);
-  padding-top: 1.5em;
-
-  text-align: center;
-  margin: auto;
-  letter-spacing: 0.1em;
-
-  & .image-containerGroot {
-    display: none;
-  }
-  & h2 {
-    color: var(--secondary-color);
-    font-size: 2.7em;
-    line-height: 1.2em;
-    padding-top: 0.3em;
-  }
-}
-
-.background-image-container img {
-  width: 100%;
-  height: auto;
-  padding-top: 1em;
-  display: block;
-}
-
-/* begin 'marketplace' knoppen // wanted en aangeboden */
-.marketplace {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 0 0.6rem 0.15rem rgba(95, 95, 95, 0.237);
-
-  & h4 {
-    font-family: var(--main-font);
-    font-weight: lighter;
-  }
-}
-
-button {
-  background: transparent;
-  border: none;
-}
-
-.offered,
-.wanted {
-  display: flex;
-  z-index: 10px;
-  position: relative;
-  justify-content: space-evenly;
-  padding: 1em 0 1em 0;
-  width: 50vw;
-  font-size: 1em;
-}
-
-.offered:hover,
-.wanted:hover {
-  cursor: pointer;
-}
-
-/*active class voor de microinteracte
-  wordt gebruikt in js*/
-.offered.active,
-.wanted.active {
-  color: var(--third-color); /* Make the text green */
-  border-bottom: 0.2em solid var(--third-color); /* Green underline */
-}
-
-.card-list {
-  display: none;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-.card-list.active {
-  display: flex;
-}
-
-.card {
-  display: flex;
-  flex: 0 0 45%;
-  flex-direction: column;
-  align-items: start;
-  width: 32em;
-  height: auto;
-  margin-top: 1em;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  font-family: var(--main-font);
-  border-radius: 0.3em;
-  overflow: hidden;
-
-  & img {
-    width: 100%;
-    height: auto;
-    float: left;
-  }
-
-  & .text-content {
-    background-color: var(--text-backgroundColor);
-    padding: 0.5em;
-  }
-  & h4 {
-    font-size: 1.2em;
-  }
-
-  & p {
-    padding-top: 0.6em;
-    font-size: 0.8em;
-  }
-  & a {
-    text-align: right;
-    color: var(--secondary-color);
-    /* text-decoration: none; */
-    padding-top: 0.2em;
-    font-size: 0.9em;
-  }
-  .material-symbols-outlined {
-    vertical-align: middle;
-    font-size: 2em;
-  }
-}
-
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.3);
-}
-
-.grid-container .image-container {
-  display: none;
-}
-
-.grid-container .image-containerGroot {
-  display: block; /* Now targeting the correct container */
-  position: relative;
-  width: 100%;
-  min-width: 630px;
-  max-width: 960px;
-  padding: 1.4em;
-}
-
-.grid-container .image-containerGroot img {
-  width: 100%;
-  height: auto;
-  border-radius: 1.3em;
-}
-
-footer {
-  & {
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-    background: var(--secondary-color);
-    color: var(--primary-color);
-    margin-top: 2em;
-    padding: 60px 10%;
-    font-family: var(--main-font);
-  }
-
-  & ul {
-    list-style: none;
-  }
-
-  & ul li:not(:last-child) {
-    margin-bottom: 8px;
-  }
-
-  & ul li a {
-    display: block;
-    font-size: 19px;
-    text-transform: capitalize;
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: 0.2s;
-  }
-
-  & li a:hover {
-    color: var(--third-color);
-    padding-left: 2px;
-  }
-}
-
-.footer-col {
-  & {
-    width: 100%; /* Voor responsive maken: bij 740px 50% en bij 555px 100% doen */
-  }
-
-  & h4 {
-    position: relative;
-    margin-bottom: 30px;
-    font-weight: 400;
-    font-size: 22px;
-    text-transform: capitalize;
-  }
-  /* voor streepje onder h4 kopje.(Streepje vedwijnt, als beeld kleiner is dan 740px)*/
-  & h4::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    background-color: var(--third-color);
-    height: 2px;
-    width: 40px;
-  }
-}
-
-.links a {
-  display: inline-block;
-  height: 44px;
-  width: 44px;
-  color: white;
-  background-color: var(--third-color);
-  margin: 0px 8px 8px 0px;
-  text-align: center;
-  line-height: 44px;
-  border-radius: 50%;
-  transition: 0.4s;
-}
-/*einde footer */
-
-/* Media qeury footer */
-
-@media (min-width: 555px) {
-  .footer-col {
-    width: 50%;
-    margin-bottom: 30px;
-    text-align: center;
-  }
-}
-
-@media (min-width: 880px) {
-  .footer-col {
-    width: 25%;
-  }
-}
-
-@media (min-width: 300px) {
-  h4::before {
-    display: none;
-  }
-  .footer-col {
-    margin-bottom: 30px;
-  }
-}
-
-/* .grid-container {
-      background-image: url(fotos/westmapsgroot.png);
-    } */
-
-@media screen and (min-width: 960px) {
-  /*CSS voor desktop */
-}
-
-@media (max-width: 1200px) {
-  /* .text-container {
-      display:;
-    } */
-
-  .image-containerGroot {
-    display: flex;
-    justify-content: center;
-  }
-}
-/* Hamburger-menu { voor nu met max-width gedaan, binnenkort met veranderen naar min-width */
-
-@media screen and (max-width: 600px) {
-  .hamburger {
-    display: block;
-  }
-
+  
   .nav-menu {
+    display: flex;
     position: absolute;
     left: -100%;
     top: 60px;
@@ -359,6 +93,10 @@ footer {
     z-index: 10000 var(--main-font);
   }
 
+  .nav-link {
+    transition: 0.3s ease-out;
+  }
+  
   .nav-item {
     margin: 16px 0;
   }
@@ -374,4 +112,235 @@ footer {
   .hamburger.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
+  
+  .grid-container {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--main-font);
+    padding-top: .5em;
+    
+    text-align: center;
+    margin: auto;
+    letter-spacing: 0.1em;
+
+  & .image-containerGroot {
+   display: none;
+  }
+   & h2 {
+    color: var(--secondary-color);
+    font-size: 2.7em;
+    line-height: 1.2em;
+    padding-top: .3em;
+  }
+  }
+
+.background-image-container img {
+  width: 100%;
+  height: auto;
+  padding-top: 1em;
+  display: block;
 }
+
+  /* begin 'marketplace' knoppen // wanted en aangeboden */
+  .marketplace { 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 0.6rem .15rem rgba(95, 95, 95, 0.237);
+  
+    & h4 {
+      font-family: var(--main-font);
+      font-weight: lighter;
+    }
+  }
+  
+  button {
+    background: transparent;
+    border: none;
+  }
+
+  .offered,
+  .wanted {
+    display: flex;
+    z-index: 10px;
+    position: relative;
+    justify-content: space-evenly;
+    padding: 1em 0 1em 0;
+    width: 50vw;
+    font-size: 1em;
+  }
+  
+  .offered:hover,
+  .wanted:hover {
+    cursor: pointer;
+  }
+  
+  /*active class voor de microinteracte
+  wordt gebruikt in js*/
+  .offered.active, .wanted.active {
+    color: var(--third-color); /* Make the text green */
+    border-bottom: .2em solid var(--third-color); /* Green underline */
+  }
+  
+  .card-list {
+    display: none;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .card-list.active {
+    display: flex;
+
+  }
+  
+  .card {
+    display: flex;
+    flex: 0 0 45%;
+    flex-direction: column;
+    align-items: start;
+    width: 32em;
+    height: auto;
+    margin-top: 1em;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    font-family: var(--main-font);
+    border-radius: .3em;
+    overflow: hidden;
+
+    & img {
+      width: 100%;
+      height: auto;
+      object-fit: fill;
+      
+     }
+  
+    & .text-content {
+      background-color: var(--text-backgroundColor);
+      padding: .5em;
+      margin-top: auto;
+      
+    }
+    & h4 {
+      font-size: 1.2em;
+    }
+
+    & p {
+      padding-top: .6em;
+      font-size: .8em;
+      
+  }
+    & a {
+    text-align: right;
+    color: var(--secondary-color);
+  /* text-decoration: none; */
+    padding-top: .2em;
+    font-size: .9em;
+    
+}
+ .material-symbols-outlined {
+      vertical-align: middle;
+      font-size: 2em;
+  }
+}
+
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
+  }
+  
+  
+  @media screen and (min-width: 630px) {
+    /* Verberg het hamburgermenu op tablet/desktop */
+    .hamburger-menu i {
+        display: none;
+    }
+  
+    nav {
+      & h1 {
+        margin-right: auto;
+        position: relative;
+      }
+    
+      & ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none;
+      }
+    
+      & ul li {
+        margin-right: 60px;
+      }
+      & ul li a {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-size: 1rem;
+      }
+    
+      & ul li a:hover {
+        color: var(--third-color); /* Change color on hover */
+      } 
+  
+      & ul li a::after {
+          content: "";
+          width: 0%;
+          height: 2px;
+          background: #2aad51;
+          display: block;
+          margin: auto;
+          transition: 0.5s;
+      }
+      & ul li a:hover::after {
+        width: 100%;
+      }
+     
+    }
+
+    .nav-menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 60px;
+    }
+    
+    .grid-container .image-container {
+      display: none;
+    }
+  
+    .grid-container .image-containerGroot {
+      display: block; /* Now targeting the correct container */
+      position: relative;
+      width: 100%;
+      min-width: 630px;
+      max-width: 960px;
+      padding: 1.4em;
+    }
+  
+    .grid-container .image-containerGroot img {
+      width: 100%;
+      height: auto;
+      border-radius: 1.3em;
+    }
+
+    /* .grid-container {
+      background-image: url(fotos/westmapsgroot.png);
+    } */
+  }
+  
+  @media screen and (min-width: 960px) {
+    /*CSS voor desktop */
+  
+  }
+  
+  @media  (max-width: 1200px) {
+    /* .text-container {
+      display:;
+    } */
+  
+    .image-containerGroot {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  
+  

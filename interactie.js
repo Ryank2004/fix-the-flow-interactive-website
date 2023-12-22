@@ -8,7 +8,7 @@ const wantedList = document.getElementById('card-list-wanted');
 offeredBtn.addEventListener('click', function() {
     offeredBtn.classList.add("active")
     wantedBtn.classList.remove("active")
-    
+    console.log("checkcheck")
     offeredList.classList.add('active')
     wantedList.classList.remove('active')
 })
@@ -21,7 +21,6 @@ wantedBtn.addEventListener('click', function() {
     wantedList.classList.add('active')
 })
 
-// Hamburger menu Start 
 
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
@@ -30,6 +29,3 @@ hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("active");
   navMenu.classList.toggle("active");
 });
-
-// Einde Hamburger menu 
-
